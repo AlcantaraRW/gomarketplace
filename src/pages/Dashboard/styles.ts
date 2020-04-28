@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import { FlatList } from 'react-native';
+import { Product as Model } from '.';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
@@ -13,7 +14,7 @@ export const ProductContainer = styled.View`
   flex-direction: row;
 `;
 
-export const ProductList = styled(FlatList).attrs({
+export const ProductList = styled(FlatList as new () => FlatList<Model>).attrs({
   numColumns: 2,
 })`
   flex: 1;
